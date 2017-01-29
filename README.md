@@ -33,7 +33,7 @@ After downloading/cloning it
 Change directory and run npm install
 Run
 ```
-cd r-ionic-template
+cd r-ionic2-template
 npm install
 ```
 to pull in the project dependencies.
