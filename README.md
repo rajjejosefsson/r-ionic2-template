@@ -26,7 +26,7 @@ When you have completed the above processes, run:
 You can download this project directly or clone it using git
 run the following command
 ```
- git clone https://github.com/rajjejosefsson/r-ionic-template
+ git clone https://github.com/rajjejosefsson/r-ionic2-template
 `````
 
 After downloading/cloning it
