@@ -3,9 +3,9 @@
 
 
 <p>
-   <img src="https://github.com/rajjejosefsson/r-ionic-template/blob/master/src/assets/images/Skärmavbild%202017-01-29%20kl.%2011.55.31.png" width="250"/>
+   <img src="https://github.com/rajjejosefsson/r-ionic2-template/blob/master/src/assets/images/Skärmavbild%202017-01-29%20kl.%2011.55.31.png" width="250"/>
   
-   <img src="https://github.com/rajjejosefsson/r-ionic-template/blob/master/src/assets/images/side-menu.gif" width="250"/>
+   <img src="https://github.com/rajjejosefsson/r-ionic2-template/blob/master/src/assets/images/side-menu.gif" width="250"/>
 
 </p>
 
