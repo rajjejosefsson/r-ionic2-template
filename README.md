@@ -1,4 +1,4 @@
-# r-ionic-template
+# r-ionic2-template
 
 
 
