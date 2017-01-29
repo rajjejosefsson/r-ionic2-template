@@ -1,0 +1,70 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Authentication</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div padding>
+    <ion-segment [(ngModel)]="selectedAuthType">
+      <ion-segment-button value="signin">
+        Sign In
+      </ion-segment-button>
+      <ion-segment-button value="signup">
+        Sign Up
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div [ngSwitch]="selectedAuthType">
+
+    <div *ngSwitchCase="'signin'">
+
+      <form #signInForm="ngForm" (ngSubmit)="onSigninWithEmail(signInForm)">
+        <ion-item>
+          <ion-label floating>email</ion-label>
+          <ion-input type="email" name="email" ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>password</ion-label>
+          <ion-input type="password" name="password" ngModel required></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Sign In</button>
+      </form>
+
+      <button class="socialButton" ion-button block outline (click)="signInWithFacebook()" icon-left>
+        <ion-icon name="logo-facebook"></ion-icon>
+        Sign in with Facebook
+      </button>
+    </div>
+
+
+    <div *ngSwitchCase="'signup'">
+
+      <form #signUpForm="ngForm" (ngSubmit)="onSignUpWithEmail(signUpForm)">
+        <ion-item>
+          <ion-label floating>email</ion-label>
+          <ion-input type="email" name="email" ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>password</ion-label>
+          <ion-input type="password" name="password" ngModel required></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Sign Up</button>
+      </form>
+
+    </div>
+  </div>
+
+
+</ion-content>

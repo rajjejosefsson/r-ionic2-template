@@ -1,0 +1,36 @@
+<ion-menu [content]="mycontent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+
+      <div *ngIf="isAuthenticated">
+        <button ion-item (click)="onLoadPage(rootPage)" menuClose>
+          <ion-icon name="home" item-left></ion-icon>
+          Home
+        </button>
+
+        <button ion-item (click)="onSignOut()" menuClose>
+          <ion-icon name="log-out" item-left></ion-icon>
+          Sign Out
+        </button>
+      </div>
+
+
+      <div *ngIf="!isAuthenticated">
+        <button ion-item (click)="onLoadPage(authPage)" menuClose>
+          <ion-icon name="lock" item-left></ion-icon>
+          Authentication
+        </button>
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

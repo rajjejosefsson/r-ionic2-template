@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Form
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
+
+    <ion-item>
+      <ion-label floating>Control 1</ion-label>
+      <ion-input type="text" formControlName="control1" [class.invalid]="!formGroup.controls.control1.valid && (formGroup.controls.control1.dirty || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formGroup.controls.control1.valid && (formGroup.controls.control1.dirty || submitAttempt)">
+      <p color="danger">Please enter a valid xxx</p>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Control 2</ion-label>
+      <ion-input type="text" formControlName="control2" [class.invalid]="!formGroup.controls.control2.valid && (formGroup.controls.control2.dirty || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!formGroup.controls.control2.valid && (formGroup.controls.control2.dirty || submitAttempt)">
+      <p color="danger">Please enter a valid Email</p>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Control 3</ion-label>
+      <ion-input type="number" formControlName="control3" [class.invalid]="!formGroup.controls.control3.valid && (formGroup.controls.control3.dirty || submitAttempt)"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="!formGroup.controls.control3.valid && (formGroup.controls.control3.dirty || submitAttempt)">
+      <p color="danger">Please enter a valid xxx</p>
+    </ion-item>
+
+
+    <div text-center>
+      <button ion-button type="submit" [disabled]="!formGroup.valid">Submit</button>
+    </div>
+  </form>
+
+
+  <ion-item-divider color="secondary">
+    Other Components
+  </ion-item-divider>
+
+
+  <ion-list radio-group>
+    <ion-item>
+      <ion-label>Friends</ion-label>
+      <ion-radio value="friends" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Family</ion-label>
+      <ion-radio value="family"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Enemies</ion-label>
+      <ion-radio value="enemies"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Your current value <ion-badge item-right>{{ value }}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="-200" max="200" [(ngModel)]="value" ionChange color="secondary">
+        <ion-label range-left>-200</ion-label>
+        <ion-label range-right>200</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
