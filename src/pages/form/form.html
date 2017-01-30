@@ -13,11 +13,26 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-item icon-left>
+    <ion-icon name="map"></ion-icon>
+    Current Position <br>
+    lat: {{latitude}} lng:{{longitude}} <br>
+    {{ address }}
+  </ion-item>
+
+
+  <ion-item-divider color="secondary">
+    Firebase Form
+  </ion-item-divider>
+
+
   <form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
 
     <ion-item>
       <ion-label floating>Control 1</ion-label>
-      <ion-input type="text" formControlName="control1" [class.invalid]="!formGroup.controls.control1.valid && (formGroup.controls.control1.dirty || submitAttempt)"></ion-input>
+      <ion-input type="text" formControlName="control1"
+                 [class.invalid]="!formGroup.controls.control1.valid && (formGroup.controls.control1.dirty || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item *ngIf="!formGroup.controls.control1.valid && (formGroup.controls.control1.dirty || submitAttempt)">
       <p color="danger">Please enter a valid xxx</p>
@@ -26,7 +41,8 @@
 
     <ion-item>
       <ion-label floating>Control 2</ion-label>
-      <ion-input type="text" formControlName="control2" [class.invalid]="!formGroup.controls.control2.valid && (formGroup.controls.control2.dirty || submitAttempt)"></ion-input>
+      <ion-input type="text" formControlName="control2"
+                 [class.invalid]="!formGroup.controls.control2.valid && (formGroup.controls.control2.dirty || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item *ngIf="!formGroup.controls.control2.valid && (formGroup.controls.control2.dirty || submitAttempt)">
       <p color="danger">Please enter a valid Email</p>
@@ -35,7 +51,8 @@
 
     <ion-item>
       <ion-label floating>Control 3</ion-label>
-      <ion-input type="number" formControlName="control3" [class.invalid]="!formGroup.controls.control3.valid && (formGroup.controls.control3.dirty || submitAttempt)"></ion-input>
+      <ion-input type="number" formControlName="control3"
+                 [class.invalid]="!formGroup.controls.control3.valid && (formGroup.controls.control3.dirty || submitAttempt)"></ion-input>
     </ion-item>
 
     <ion-item *ngIf="!formGroup.controls.control3.valid && (formGroup.controls.control3.dirty || submitAttempt)">
@@ -49,10 +66,14 @@
   </form>
 
 
-  <ion-item-divider color="secondary">
-    Other Components
+  <ion-item-divider color="primary">
+    Components Examples
   </ion-item-divider>
 
+
+  <ion-item-divider color="secondary">
+    Radio Buttons
+  </ion-item-divider>
 
   <ion-list radio-group>
     <ion-item>
@@ -69,9 +90,15 @@
     </ion-item>
   </ion-list>
 
+
+  <ion-item-divider color="secondary">
+    Range Slider
+  </ion-item-divider>
+
   <ion-list>
     <ion-list-header>
-      Your current value <ion-badge item-right>{{ value }}</ion-badge>
+      Your current value
+      <ion-badge item-right>{{ value }}</ion-badge>
     </ion-list-header>
     <ion-item>
       <ion-range min="-200" max="200" [(ngModel)]="value" ionChange color="secondary">
@@ -80,5 +107,17 @@
       </ion-range>
     </ion-item>
   </ion-list>
+
+
+  <ion-item-divider color="secondary">
+    Checkbox
+  </ion-item-divider>
+
+  <ion-item>
+    <ion-label>Sausage</ion-label>
+    <ion-checkbox disabled="false"></ion-checkbox>
+  </ion-item>
+
+
 
 </ion-content>
