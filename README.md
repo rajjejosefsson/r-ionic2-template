@@ -38,8 +38,8 @@ npm install
 ```
 to pull in the project dependencies.
 
-After that, you need to update the `firebase.service.ts` located in `src\services\firebase.service.ts` your own firebase credentials that you obtained firebase console for the project
-it will look like this:
+After that, you need to update the `firebase.service.ts` located in `src\services\firebase.service.ts` your own firebase credentials that you obtain in the firebase console for the project
+that will look like this:
 
 ```
 <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
