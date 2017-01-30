@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
+import { PopoverPage } from '../pages/about/popover/popover';
 import { FormPage } from '../pages/form/form';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -15,7 +16,8 @@ import {FirebaseService} from "../services/firebase.service";
     FormPage,
     HomePage,
     TabsPage,
-    AuthPage
+    AuthPage,
+    PopoverPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -27,7 +29,8 @@ import {FirebaseService} from "../services/firebase.service";
     FormPage,
     HomePage,
     TabsPage,
-    AuthPage
+    AuthPage,
+    PopoverPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
